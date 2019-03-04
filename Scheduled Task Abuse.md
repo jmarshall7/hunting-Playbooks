@@ -12,7 +12,9 @@ If Suspicious scheduled tasks are identified. This may suggest that a threat act
 
 ---
 
-## CB Hunting Notes
+## CB Hunt Query
+
+childproc_name:schtasks.exe AND -digsig_result:Signed AND -process_name:wsqmcons.exe AND -process_name:taskeng.exe
 
 ---
 
@@ -22,8 +24,7 @@ If Suspicious scheduled tasks are identified. This may suggest that a threat act
 
 
 ## HUNTER NOTES
-* Analyze network data for unusual amounts of data to/from endpoints.
-* Processes making network connections that do not normally have network communication or have never been seen before. Long-   tail analysis may be best approach here. 
-* Analyze packet contents to detect communications that do not follow the expected protocol behavior for the port that is     being used. 
+* query an environment. once results finish. export to csv and conduct long tail analysis identifying anomolous scheduled tasks creations.  
+* further investigate findings determining if it is authorized activity. From there attempt to investigate the anomolies thag have not been identified as authorized by tracing the steps of the actor (what has the user done in addition to the cheduled task creation, does anything else stand out as suspicious? etc.)
 
 ---
