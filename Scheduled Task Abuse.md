@@ -14,7 +14,7 @@ Adversaries targeting MSPs have been known to utilize Scheduled task utilities t
 
 __Query: Carbon Black Response__
 ```
-(proc_name:schtasks.exe AND cmdline:schtasks /create /tn)
+(process_name:schtasks.exe AND cmdline:schtasks /create /tn)
 ```
 **CbR caveat**: use API tools such as [cbinterface.py](https://github.ibm.com/MSS-MDR/cbinterface) or Red Canary's [process-util.py](https://github.ibm.com/MSS-MDR/redcanary-response-utils) when the number of results exceeds 1000 (Cb Response UI only support exporting the top 1000 process results as CSV). Group by process ID to keep the number or results down.
 
