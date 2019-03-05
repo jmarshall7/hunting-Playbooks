@@ -1,4 +1,4 @@
-# Scheduled Tasks
+# Scheduled Task Creations
 
 <BR>
 
@@ -14,7 +14,7 @@ Adversaries targeting MSPs have been known to utilize Scheduled task utilities t
 
 __Query: Carbon Black Response__
 ```
-(process_name:schtasks.exe AND cmdline:schtasks /create /tn)
+(process_name:schtasks.exe AND cmdline:"schtasks\ /create\ /tn")
 ```
 **CbR caveat**: use API tools such as [cbinterface.py](https://github.ibm.com/MSS-MDR/cbinterface) or Red Canary's [process-util.py](https://github.ibm.com/MSS-MDR/redcanary-response-utils) when the number of results exceeds 1000 (Cb Response UI only support exporting the top 1000 process results as CSV). Group by process ID to keep the number or results down.
 
@@ -25,3 +25,18 @@ __Query: Carbon Black Response__
 2. Outliers and suspicious task creations will need further investigation with the client in determining if it is authorized activity. 
 
 3. For identified anomolies that have not been deemed authorized; further investigation of the task creation will need to be conducted. Trace the process tree in attempts to determine what activity occured shortly before the task creation. attempt to search out any additional suspicious activity from the user account that creat the scheduled task. Attempt to identify any additional TTPs that may further support the hypothisis that an unauthorized actor is present on the network.
+
+## Report contents
+
+- Hosts that now have malware persistence
+- Usernames that have been compromised
+- Possible root cause of the activity
+
+## Followup hunts
+
+--TBD--
+
+## References
+
++ [MITRE ATT&CK Scheduled Tasks](https://attack.mitre.org/techniques/T1053/)
++ [Your Practical Guide to Threat Hunting](https://sqrrl.com/media/Your-Practical-Guide-to-Threat-Hunting.pdf)
