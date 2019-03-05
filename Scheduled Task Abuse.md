@@ -20,8 +20,8 @@ __Query: Carbon Black Response__
 
 ### Prepare and analyse data
 
-1. To quickly sort and analyze results the recommendation would be to export to csv for grouping and long-tail analysis to identify anomolies. Pivot tables are an efficient resource for this. this would allow you to group commandline outputs with the hostname as well as username.
+1. To quickly sort and analyze results the recommendation would be to export to csv for grouping and long-tail analysis to identify anomolies. Pivot tables are an efficient resource for this. this would allow you to group command line outputs with the hostname as well as username.
 
 2. Outliers and suspicious task creations will need further investigation with the client in determining if it is authorized activity. 
 
-3. For identified anomolies that have not been deemed authorized, further investigation of the root-cause of the task creation will need to be conducted. Trace the process tree in attempts to determine what activity occured shortly before the task creation. Attempt to identify any additional TTPs that may suggest that an unauthorized actor is present on the network.
+3. For identified anomolies that have not been deemed authorized; further investigation of the task creation will need to be conducted. Trace the process tree in attempts to determine what activity occured shortly before the task creation. attempt to search out any additional suspicious activity from the user account that creat the scheduled task. Attempt to identify any additional TTPs that may further support the hypothisis that an unauthorized actor is present on the network.
